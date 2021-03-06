@@ -11,7 +11,7 @@ const prices = {
         "3": 0.91,
         "3.5": 1.11,
     },
-    large_envelopes = {
+    "large_envelopes" : {
         "1": 1.00,
         "2": 1.20,
         "3": 1.40,
