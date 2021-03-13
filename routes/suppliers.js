@@ -2,8 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 //pg config
-var pg = require('pg');
-var conString = 'postgres://@localhost/pg_demo_db';
+const { Client } = require('pg');
+
+const pg = new Client();
+// client.connect();
 
 //Suppliers
 //get all Suppliers
