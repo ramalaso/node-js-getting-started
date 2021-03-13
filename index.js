@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 const app = express()
-const routes = require('./routes/suppliers');
+const suppliers = require('./routes/suppliers');
 
 require('dotenv').config();
 const PORT = process.env.PORT || 5000
@@ -14,6 +14,6 @@ app.get('/', (req, res)=>{
   res.send('Hello')
 })
 
-app.use('/suppliers', routes)
+app.use('/suppliers', suppliers)
 
 app .listen(PORT, () => console.log(`Listening on ${ PORT }`))

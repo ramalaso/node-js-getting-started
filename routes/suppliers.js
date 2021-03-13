@@ -2,12 +2,24 @@ var express = require('express');
 var router = express.Router();
 connectionString = process.env.DATABASE_URL;
 //pg config
-const { Pool, Client } = require('pg')
-const pool = new Pool({
-  connectionString,
-})
+const pool = new Pool({connectionString: connectionString});
 // const pg = new Client();/*  */
 
+var sql = "SELECT * FROM suppliers";
+
+pool.query(sql, function(err, result) {
+    // If an error occurred...
+    if (err) {
+        console.log("Error in query: ")
+        console.log(err);
+    }
+
+    // Log this to the console for debugging purposes.
+    console.log("Back from DB with result:");
+    console.log(result.rows);
+
+
+});
 // client.connect();
 
 //Suppliers
