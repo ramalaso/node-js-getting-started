@@ -2,9 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 //pg config
-var p = require('pg');
-var pg = new p.Pool()
-var conString = process.env.DATABASE_URL;
+var pg = require('pg');
+var conString = 'postgres://@localhost/pg_demo_db';
 
 //Suppliers
 //get all Suppliers
