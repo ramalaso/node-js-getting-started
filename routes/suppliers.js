@@ -3,7 +3,7 @@ var router = express.Router();
 connectionString = process.env.DATABASE_URL;
 //pg config
 const { Pool, Client } = require('pg')
-const pg = new Client({
+const pool = new Pool({
   connectionString,
 })
 // const pg = new Client();/*  */
@@ -13,20 +13,14 @@ const pg = new Client({
 //Suppliers
 //get all Suppliers
 router.get('/', function(req, res, next) {
-  pg.connect(function(err, client, done) {
-    if (err) {
-      return console.error('error fetching client from pool', err);
-    }
-    console.log("connected to database");
-    client.query('SELECT * FROM suppliers', function(err, result) {
-      done();
+    pool.query('SELECT * FROM suppliers', function(err, result) {
       if (err) {
         return console.error('error running query', err);
       }
       res.send(result);
+      pool.end()
     });
   });
-});
 //post supplier
 router.post('/', function(req, res, next) {
   pg.connect( function(err, client, done) {
