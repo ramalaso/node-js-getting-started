@@ -26,13 +26,14 @@ pool.query(sql, function(err, result) {
 //Suppliers
 //get all Suppliers
 router.get('/', function(req, res, next) {
-    pool.query('SELECT * FROM suppliers', function(err, result) {
-      if (err) {
-        return console.error('error running query', err);
-      }
-      res.send(result);
-      pool.end()
-    });
+    // pool.query('SELECT * FROM suppliers', function(err, result) {
+    //   if (err) {
+    //     return console.error('error running query', err);
+    //   }
+    //   res.send(result);
+    //   pool.end()
+    // });
+    res.send('Hello from suppliers')
   });
 //post supplier
 router.post('/', function(req, res, next) {
