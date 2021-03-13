@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 connectionString = process.env.DATABASE_URL;
 //pg config
-const pool = new Pool({connectionString: connectionString});
+const pool = new Pool({connectionString: connectionString, ssl: { rejectUnauthorized: false } });
 // const pg = new Client();/*  */
 
 var sql = "SELECT * FROM suppliers";
