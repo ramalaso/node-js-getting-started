@@ -6,7 +6,20 @@ const { Pool } = require('pg')
 const pool = new Pool({connectionString: connectionString, ssl: { rejectUnauthorized: false } });
 // const pg = new Client();/*  */
 
-var sql = "SELECT * FROM suppliers";
+
+// client.connect();
+
+//Suppliers
+//get all Suppliers
+router.get('/', function(req, res, next) {
+    // pool.query('SELECT * FROM suppliers', function(err, result) {
+    //   if (err) {
+    //     return console.error('error running query', err);
+    //   }
+    //   res.send(result);
+    //   pool.end()
+    // });
+    var sql = "SELECT * FROM suppliers";
 
 pool.query(sql, function(err, result) {
     // If an error occurred...
@@ -21,18 +34,6 @@ pool.query(sql, function(err, result) {
 
 
 });
-// client.connect();
-
-//Suppliers
-//get all Suppliers
-router.get('/', function(req, res, next) {
-    // pool.query('SELECT * FROM suppliers', function(err, result) {
-    //   if (err) {
-    //     return console.error('error running query', err);
-    //   }
-    //   res.send(result);
-    //   pool.end()
-    // });
     res.send('Hello from suppliers')
   });
 //post supplier
