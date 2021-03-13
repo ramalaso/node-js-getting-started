@@ -34,6 +34,8 @@ pool.query(sql, function(err, result) {
 
 
 });
+    console.log("Back from DB with result:");
+    console.log(result.rows);
     res.send('Hello from suppliers')
   });
 //post supplier
