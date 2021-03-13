@@ -7,7 +7,7 @@ var conString = process.env.DATABASE_URL;
 
 //Suppliers
 //get all Suppliers
-router.get('/suppliers', function(req, res, next) {
+router.get('/', function(req, res, next) {
   pg.connect(conString, function(err, client, done) {
     if (err) {
       return console.error('error fetching client from pool', err);
@@ -23,7 +23,7 @@ router.get('/suppliers', function(req, res, next) {
   });
 });
 //post supplier
-router.post('/suppliers', function(req, res, next) {
+router.post('/', function(req, res, next) {
   pg.connect(conString, function(err, client, done) {
     if (err) {
       return console.error('error fetching client from pool', err);
@@ -39,7 +39,7 @@ router.post('/suppliers', function(req, res, next) {
   });
 });
 //get one supplier
-router.get('/suppliers/:id', function(req, res, next) {
+router.get('/:id', function(req, res, next) {
   pg.connect(conString, function(err, client, done) {
     if (err) {
       return console.error('error fetching client from pool', err);
@@ -55,7 +55,7 @@ router.get('/suppliers/:id', function(req, res, next) {
   });
 });
 // update supplier
-router.put('/suppliers/:id', function(req, res, next) {
+router.put('/:id', function(req, res, next) {
   pg.connect(conString, function(err, client, done) {
     if (err) {
       return console.error('error fetching client from pool', err);
@@ -72,7 +72,7 @@ router.put('/suppliers/:id', function(req, res, next) {
   });
 });
 //delete one supplier
-router.delete('/suppliers/:id', function(req, res, next) {
+router.delete('/:id', function(req, res, next) {
   pg.connect(conString, function(err, client, done) {
      console.log(conString)
     if (err) {

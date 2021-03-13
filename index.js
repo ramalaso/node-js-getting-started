@@ -12,9 +12,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 app .set('views', path.join(__dirname, 'views'))
 app .set('view engine', 'ejs')
 
-
+app.use('/suppliers', routes)
 app .get('/', (req, res) => res.render('pages/index'))
-
 app.get('/getRate', (req, res)=>{
   const queryObject = url.parse(req.url,true).query;
   console.log(queryObject.type, queryObject.weight)
