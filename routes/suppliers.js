@@ -1,17 +1,19 @@
 var express = require('express');
 var router = express.Router();
-
-//pg config
-const { Client } = require('pg');
-
-const pg = new Client();
 conString = process.env.DATABASE_URL;
+//pg config
+const { Pool } = require('pg')
+const pg = new Pool({
+  conString
+})
+// const pg = new Client();/*  */
+
 // client.connect();
 
 //Suppliers
 //get all Suppliers
 router.get('/', function(req, res, next) {
-  pg.connect(conString, function(err, client, done) {
+  pg.connect(function(err, client, done) {
     if (err) {
       return console.error('error fetching client from pool', err);
     }
@@ -27,7 +29,7 @@ router.get('/', function(req, res, next) {
 });
 //post supplier
 router.post('/', function(req, res, next) {
-  pg.connect(conString, function(err, client, done) {
+  pg.connect( function(err, client, done) {
     if (err) {
       return console.error('error fetching client from pool', err);
     }
@@ -43,7 +45,7 @@ router.post('/', function(req, res, next) {
 });
 //get one supplier
 router.get('/:id', function(req, res, next) {
-  pg.connect(conString, function(err, client, done) {
+  pg.connect( function(err, client, done) {
     if (err) {
       return console.error('error fetching client from pool', err);
     }
@@ -59,7 +61,7 @@ router.get('/:id', function(req, res, next) {
 });
 // update supplier
 router.put('/:id', function(req, res, next) {
-  pg.connect(conString, function(err, client, done) {
+  pg.connect( function(err, client, done) {
     if (err) {
       return console.error('error fetching client from pool', err);
     }
@@ -76,7 +78,7 @@ router.put('/:id', function(req, res, next) {
 });
 //delete one supplier
 router.delete('/:id', function(req, res, next) {
-  pg.connect(conString, function(err, client, done) {
+  pg.connect(function(err, client, done) {
      console.log(conString)
     if (err) {
       return console.error('error fetching client from pool', err);
