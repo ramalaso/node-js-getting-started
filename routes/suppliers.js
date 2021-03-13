@@ -5,6 +5,7 @@ var router = express.Router();
 const { Client } = require('pg');
 
 const pg = new Client();
+conString = process.env.DATABASE_URL;
 // client.connect();
 
 //Suppliers
