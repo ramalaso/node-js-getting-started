@@ -1,7 +1,12 @@
+var express = require('express');
+var router = express.Router();
 require('dotenv').config();
 const { Pool } = require('pg');
 var express = require('express');
 var app = express();
+
+
+
 
 const connectionString = process.env.DATABASE_URL;
 const pool = new Pool({
@@ -11,7 +16,7 @@ const pool = new Pool({
 
 const port = process.env.PORT || 5000;
 
-app.get('/', function (req, res) {
+router.get('/', function (req, res) {
 
   pool.connect((err, client, done) => {
     if (err) throw err
