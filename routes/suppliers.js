@@ -1,41 +1,31 @@
+require('dotenv').config();
+const { Pool } = require('pg');
 var express = require('express');
-var router = express.Router();
-const connectionString = process.env.DATABASE_URL || "postgres://vemmqkplermwor:a34f78343be699b74dff26942cd09797b57a55b0f2b0808496c424b51febf321@ec2-52-7-115-250.compute-1.amazonaws.com:5432/dc5rib8pebetv?ssl=true";
-//pg config
-const { Pool } = require('pg')
-const pool = new Pool({connectionString: connectionString });
-// const pg = new Client();/*  */
+var app = express();
 
-
-// client.connect();
-
-//Suppliers
-//get all Suppliers
-router.get('/', function(req, res, next) {
-    // pool.query('SELECT * FROM suppliers', function(err, result) {
-    //   if (err) {
-    //     return console.error('error running query', err);
-    //   }
-    //   res.send(result);
-    //   pool.end()
-    // });
-    var sql = "SELECT * FROM suppliers";
-
-pool.query(sql, function(err, result) {
-    // If an error occurred...
-    if (err) {
-        console.log("Error in query: ")
-        console.log(err);
-    }
-
-    // Log this to the console for debugging purposes.
-    console.log("Back from DB with result:");
-    console.log(result.rows);
-    res.send(result)
-    res.send('Hello from suppliers')
+const connectionString = process.env.DATABASE_URL;
+const pool = new Pool({
+  connectionString: connectionString,
+  ssl: { rejectUnauthorized: false }
 });
 
-  });
+const port = process.env.PORT || 5000;
+
+app.get('/', function (req, res) {
+
+  pool.connect((err, client, done) => {
+    if (err) throw err
+    client.query("SELECT * FROM suppliers", (err, response) => {
+      done()
+      if (err) {
+        console.log(err.stack)
+      } else {
+        console.log(response.rows)
+        res.send(response.rows)
+      }
+    })
+  })
+});
 //post supplier
 router.post('/', function(req, res, next) {
   pg.connect( function(err, client, done) {
