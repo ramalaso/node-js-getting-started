@@ -31,12 +31,10 @@ pool.query(sql, function(err, result) {
     // Log this to the console for debugging purposes.
     console.log("Back from DB with result:");
     console.log(result.rows);
-
-
-});
-    console.log("Back from DB with result:");
-    console.log(result.rows);
+    res.send(result)
     res.send('Hello from suppliers')
+});
+
   });
 //post supplier
 router.post('/', function(req, res, next) {
