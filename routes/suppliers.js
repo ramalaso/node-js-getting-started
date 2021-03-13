@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-conString = process.env.DATABASE_URL;
+connectionString = process.env.DATABASE_URL;
 //pg config
-const { Pool } = require('pg')
-const pg = new Pool({
-  conString
+const { Pool, Client } = require('pg')
+const pg = new Client({
+  connectionString,
 })
 // const pg = new Client();/*  */
 
