@@ -4,7 +4,6 @@ var router = express.Router();
 //pg config
 var p = require('pg');
 var pg = new p.Pool()
-pg.defaults.ssl = true;
 var conString = process.env.DATABASE_URL;
 
 //Suppliers
