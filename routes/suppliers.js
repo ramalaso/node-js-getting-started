@@ -18,7 +18,7 @@ router.get('/', function (req, res) {
         console.log(err.stack)
       } else {
         console.log(response.rows)
-        res.send(response.rows)
+        res.render('pages/suppliers', {results: response})
       }
     })
   })
