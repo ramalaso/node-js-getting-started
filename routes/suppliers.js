@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-require('dotenv').config();
 const { Client } = require('pg');
 var express = require('express');
 
