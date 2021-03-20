@@ -53,6 +53,7 @@ const clearAddTable = () => {
 };
 
 function init() {
+  const suppliers = getSuppliers();
   tableRef.innerHTML = "";
   suppliers.forEach(addSupplierToDOM);
 }
