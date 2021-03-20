@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -245,4 +246,41 @@
     <script src="js/queryS.js"></script>
     <script src="js/scriptS.js"></script>
   </body>
+=======
+<html>
+<head>
+  <%- include ("../partials/header.ejs") %>
+</head>
+
+<body>
+
+  <%- include ("../partials/nav.ejs") %>
+
+<div class="jumbotron text-center" style="height: 90vh;">
+  <div class="container">
+    <a href="/" class="lang-logo">
+      <img src="/images.png">
+    </a>
+    <h1>Welcome to LCG delivery company </h1>
+    <form method="GET" action="/getRate" style="width: 60%; margin: auto; border: 2px solid white; border-radius: 5px; padding: 20px;">
+      <h3>Price Calculator</h3>
+      <div class="form-group">
+        <label for="weight">Item weight</label>
+        <input name ="weight" type="text" class="form-control" id="weight" aria-describedby="weight" placeholder="Enter item weight">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Select mail type</label>
+        <select name="type" multiple class="form-control" id="exampleFormControlSelect1">
+          <option value="stamped_letters">Letters (Stamped)</option>
+          <option value="metered_letters">Letters (Metered)</option>
+          <option value="large_envelopes">Large Envelopes (Flats)</option>
+          <option value="first_class" >First-Class Package Service—Retail</option>
+        </select>
+      </div>
+      <button style="width: 100%; margin-top: 15px; background-color: tomato;" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+</body>
+>>>>>>> 6be1da387d7aac040aa608f1429661e8a6f580dc
 </html>
