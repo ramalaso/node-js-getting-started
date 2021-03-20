@@ -21,11 +21,11 @@ const btnDeleteAccepted = document.getElementById("deleteAccepted");
 const txtInventoryId = document.getElementById("inventoryId");
 const txtInventoryName = document.getElementById("inventoryName");
 const txtInventoryQuantity = document.getElementById("inventoryQuantity");
-const btnAddInventory = document.getElementById("addInventory");
+// const btnAddInventory = document.getElementById("addInventory");
 
 btnSaveChanges.addEventListener("click", updateProduct);
 btnDeleteAccepted.addEventListener("click", removeProductAccepted);
-btnAddInventory.addEventListener("click", addInventoryAccepted);
+// btnAddInventory.addEventListener("click", addInventoryAccepted);
 
 const localStorageTransactions = JSON.parse(localStorage.getItem("products"));
 let products =
