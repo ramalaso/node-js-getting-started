@@ -1,7 +1,7 @@
 const getSuppliers = async () => {
   const response = await fetch('https://gentle-anchorage-20332.herokuapp.com/api/v1/suppliers');
   const suppliers = await response.json();
-  return suppliers;
+  return suppliers.rows;
 };
 // function getSuppliers() {
 //   fetch('https://gentle-anchorage-20332.herokuapp.com/api/v1/suppliers')
