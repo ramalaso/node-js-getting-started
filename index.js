@@ -13,6 +13,6 @@ app.get('/', (req, res)=>{
   res.render('pages/index')
 })
 
-app.use('/suppliers', suppliers)
+app.use('/api/v1/suppliers', suppliers)
 
 app .listen(PORT, () => console.log(`Listening on ${ PORT }`))

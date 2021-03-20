@@ -1,3 +1,6 @@
+fetch('https://gentle-anchorage-20332.herokuapp.com/api/v1/suppliers')
+.then(response => response.json())
+.then(data => console.log(data));
 const txtAddName = document.getElementById("addName");
 const txtAddQuantity = document.getElementById("addQuantity");
 const txtAddPrice = document.getElementById("addPrice");
