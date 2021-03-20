@@ -5,6 +5,7 @@ function getSuppliers() {
 }
 const suppliers = getSuppliers();
 console.log(suppliers);
+
 const txtAddName = document.getElementById("addName");
 const txtAddQuantity = document.getElementById("addQuantity");
 const txtAddPrice = document.getElementById("addPrice");
@@ -53,7 +54,7 @@ const clearAddTable = () => {
 
 function init() {
   tableRef.innerHTML = "";
-  products.forEach(addProductToDOM);
+  suppliers.forEach(addSupplierToDOM);
 }
 
 updateLocalStorage = () => {
@@ -62,20 +63,20 @@ updateLocalStorage = () => {
 
 // function updateProducts(id)
 
-const addProductToDOM = (product) => {
+const addSupplierToDOM = (supplier) => {
   row = `
     <tr>
-            <td>${product.ID}</td>
-            <td>${product.Name}</td>
-            <td>${product.Quantity}</td>
-            <td>${product.Price}</td>
+            <td>${supplier.supplier_id}</td>
+            <td>${supplier.supplier_address}</td>
+            <td>${supplier.supplier_name}</td>
+            <td>${supplier.supplier_contact}</td>
             <td>
               <a href="#editProductModal" class="edit" data-toggle="modal"
                 ><i
                   class="material-icons"
                   data-toggle="tooltip"
                   title="Edit"
-                  onclick="selectProduct(${product.ID})"
+                  onclick="selectProduct(${supplier.supplier_id})"
                   >&#xE254;</i
                 ></a
               >
@@ -87,7 +88,7 @@ const addProductToDOM = (product) => {
                   class="material-icons"
                   data-toggle="tooltip"
                   title="Delete"
-                  onclick="removeProduct(${product.ID})"
+                  onclick="removeProduct(${supplier.supplier_id})"
                   >&#xE872;</i
                 ></a
               >
