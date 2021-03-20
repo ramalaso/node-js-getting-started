@@ -3,8 +3,7 @@ function getSuppliers() {
   .then(response => response.json())
   .then(data => data);
 }
-const suppliers = getSuppliers();
-console.log(suppliers);
+
 
 const txtAddName = document.getElementById("addName");
 const txtAddQuantity = document.getElementById("addQuantity");
@@ -54,6 +53,7 @@ const clearAddTable = () => {
 
 function init() {
   const suppliers = getSuppliers();
+  console.log(suppliers);
   tableRef.innerHTML = "";
   suppliers.forEach(addSupplierToDOM);
 }
