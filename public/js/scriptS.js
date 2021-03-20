@@ -56,8 +56,8 @@ const clearAddTable = () => {
   txtAddQuantity.value = "";
 };
 
-function init() {
-  const suppliers = getSuppliers();
+async function init() {
+  const suppliers = await getSuppliers();
   console.log("We are in init function")
   console.log(suppliers);
   tableRef.innerHTML = "";
