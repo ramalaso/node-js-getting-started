@@ -35,7 +35,7 @@
           <div class="table-title">
             <div class="row">
               <div class="col-sm-6">
-                <h2><b>Inventory System</b></h2>
+                <h2><b>Supplier Management</b></h2>
               </div>
               <div class="col-sm-6">
                 <a
@@ -43,7 +43,7 @@
                   class="btn btn-success"
                   data-toggle="modal"
                   ><i class="material-icons">&#xE147;</i>
-                  <span>Add New Product</span></a
+                  <span>Add New Supplier</span></a
                 >
               </div>
             </div>
@@ -52,9 +52,9 @@
             <thead>
               <tr>
                 <th>Id</th>
-                <th>Product Name</th>
-                <th>Quantity</th>
-                <th>Price</th>
+                <th>Supplier Name</th>
+                <th>Supplier Address</th>
+                <th>Supplier Contact</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -69,7 +69,7 @@
         <div class="modal-content">
           <form>
             <div class="modal-header">
-              <h4 class="modal-title">Add New Product</h4>
+              <h4 class="modal-title">Add New Supplier</h4>
               <button
                 type="button"
                 class="close"
@@ -81,24 +81,24 @@
             </div>
             <div class="modal-body">
               <div class="form-group">
-                <label>Name</label>
+                <label>Supplier Name</label>
                 <input type="text" class="form-control" id="addName" required />
               </div>
               <div class="form-group">
-                <label>Quantity</label>
+                <label>Supplier Address</label>
                 <input
-                  type="number"
+                  type="text"
                   class="form-control"
-                  id="addQuantity"
+                  id="addAddress"
                   required
                 />
               </div>
               <div class="form-group">
-                <label>Price</label>
+                <label>Supplier Contact</label>
                 <input
-                  type="number"
+                  type="text"
                   class="form-control"
-                  id="addPrice"
+                  id="addContact"
                   required
                 />
               </div>
@@ -129,7 +129,7 @@
         <div class="modal-content">
           <form>
             <div class="modal-header">
-              <h4 class="modal-title">Edit Product</h4>
+              <h4 class="modal-title">Edit Supplier</h4>
               <button
                 type="button"
                 class="close"
@@ -150,7 +150,7 @@
                 />
               </div>
               <div class="form-group">
-                <label>Name</label>
+                <label>Supplier Name</label>
                 <input
                   type="text"
                   class="form-control"
@@ -159,20 +159,20 @@
                 />
               </div>
               <div class="form-group">
-                <label>Quantity</label>
+                <label>Address</label>
                 <input
                   type="number"
                   class="form-control"
-                  id="updateQuantity"
+                  id="updateAddress"
                   required
                 />
               </div>
               <div class="form-group">
-                <label>Price</label>
+                <label>Contact</label>
                 <input
                   type="number"
                   class="form-control"
-                  id="updatePrice"
+                  id="updateContact"
                   required
                 />
               </div>
@@ -202,7 +202,7 @@
         <div class="modal-content">
           <form>
             <div class="modal-header">
-              <h4 class="modal-title">Delete Product</h4>
+              <h4 class="modal-title">Delete Supplier</h4>
               <button
                 type="button"
                 class="close"
@@ -241,72 +241,8 @@
         </div>
       </div>
     </div>
-    <!-- Add Inventory-->
-    <div id="addInventoryModal" class="modal fade">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <form>
-            <div class="modal-header">
-              <h4 class="modal-title">Add Inventory</h4>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-hidden="true"
-              >
-                &times;
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label>Id</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="inventoryId"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label>Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="inventoryName"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label>Quantity</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="inventoryQuantity"
-                  required
-                />
-              </div>
-            </div>
-            <div class="modal-footer">
-              <input
-                type="button"
-                class="btn btn-warning"
-                data-dismiss="modal"
-                value="Cancel"
-              />
-              <input
-                type="button"
-                class="btn btn-info"
-                id="addInventory"
-                data-dismiss="modal"
-                value="Add"
-              />
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
 
-    <script src="js/query.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/queryS.js"></script>
+    <script src="js/scriptS.js"></script>
   </body>
 </html>
