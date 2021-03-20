@@ -1,6 +1,19 @@
-fetch('https://gentle-anchorage-20332.herokuapp.com/api/v1/suppliers')
-.then(response => response.json())
-.then(data => console.log(data));
+const axios = require('axios');
+function getSuppliers() {
+  axios.get('/api/v1/suppliers')
+  .then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+}
+getSuppliers();
+// fetch('https://gentle-anchorage-20332.herokuapp.com/api/v1/suppliers')
+// .then(response => response.json())
+// .then(data => console.log(data));
 const txtAddName = document.getElementById("addName");
 const txtAddQuantity = document.getElementById("addQuantity");
 const txtAddPrice = document.getElementById("addPrice");
