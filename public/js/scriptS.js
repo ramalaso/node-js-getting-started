@@ -1,8 +1,13 @@
-function getSuppliers() {
-  fetch('https://gentle-anchorage-20332.herokuapp.com/api/v1/suppliers')
-  .then(response => response.json())
-  .then(data => data);
-}
+const getSuppliers = async () => {
+  const response = await fetch('https://gentle-anchorage-20332.herokuapp.com/api/v1/suppliers');
+  const suppliers = await response.json();
+  return suppliers;
+};
+// function getSuppliers() {
+//   fetch('https://gentle-anchorage-20332.herokuapp.com/api/v1/suppliers')
+//   .then(response => response.json())
+//   .then(data => data);
+// }
 
 
 const txtAddName = document.getElementById("addName");
