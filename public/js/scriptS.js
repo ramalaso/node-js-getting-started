@@ -53,6 +53,7 @@ const clearAddTable = () => {
 
 function init() {
   const suppliers = getSuppliers();
+  console.log("We are in init function")
   console.log(suppliers);
   tableRef.innerHTML = "";
   suppliers.forEach(addSupplierToDOM);
